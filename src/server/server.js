@@ -21,7 +21,15 @@ mongoose.connect(mongoUrl,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTo
   .catch(err=>console.log(err))
 
 app.use(express.static(path.join(__dirname,'../../build')))
+<<<<<<< HEAD
 //app.use(cors({credentials:true,origin:"http://localhost:3000"}));
+=======
+
+if(!process.env.NODE_ENV){
+   app.use(cors({credentials:true,origin:"http://localhost:3001"}));
+}
+
+>>>>>>> task manager material 1
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());

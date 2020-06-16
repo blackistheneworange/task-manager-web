@@ -3,10 +3,33 @@ import {connect} from 'react-redux';
 
 import * as taskActions from '../../redux/actions/taskActions'
 
+<<<<<<< HEAD
 
 
 import {Link} from 'react-router-dom';
 
+=======
+import ArchivesTable from './sub/ArchivesTable'
+
+import {Link} from 'react-router-dom';
+
+const sample=[{
+  _id:1,
+  name:"Task 1",
+  label:"work",
+  dueDate:Date.now(),
+  completionDate:Date.now(),
+  priority:'High'
+},{
+  _id:2,
+  name:"Task 2",
+  label:"personal",
+  dueDate:Date.now(),
+  completionDate:Date.now(),
+  priority:'Low'
+}]
+
+>>>>>>> task manager material 1
 function ArchivesPage(props){
   
   const [tasks,setTasks]=useState([])
@@ -34,8 +57,13 @@ function ArchivesPage(props){
 
   
   
+<<<<<<< HEAD
   function handleDelete(){
     props.deleteAllTasks()
+=======
+  function handleDelete(e){
+    
+>>>>>>> task manager material 1
   }
   
  
@@ -44,11 +72,16 @@ function ArchivesPage(props){
   
   return(
     
+<<<<<<< HEAD
     <div className="container mt-4 pb-5">
+=======
+    <div className="container-fluid mt-4 pb-5">
+>>>>>>> task manager material 1
     
     
       <h1 className="bg-info p-3 text-white">Archived Tasks</h1>
       
+<<<<<<< HEAD
       {tasks.filter(task=>task.status==="Completed").map(task=>(
         
      
@@ -78,6 +111,11 @@ function ArchivesPage(props){
       </>
       
       ))}
+=======
+      <ArchivesTable tasks={sample} handleDelete={handleDelete}/>
+      
+   
+>>>>>>> task manager material 1
       
       {tasks.filter(task=>task.status==="Completed").length===0?<h2 className="text-center p-4 mt-4">No Archived Tasks</h2>:null}
       

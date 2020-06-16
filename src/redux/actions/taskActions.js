@@ -1,6 +1,15 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 
+=======
+let url="";let options={};
+
+if(process.env.NODE_ENV==="development"){
+  url="http://localhost:3000";
+  options={withCredentials:true}
+}
+>>>>>>> task manager material 1
 
 export const createTaskSuccess=(task)=>{
   
@@ -36,7 +45,11 @@ export const loadTasks=()=>{
   
   return function(dispatch){
     
+<<<<<<< HEAD
     axios.get('/task')
+=======
+    axios.get(url+'/task',options)
+>>>>>>> task manager material 1
     .then((res)=>{
       
       dispatch(loadTasksSuccess(res.data))
@@ -48,7 +61,11 @@ export const loadTasks=()=>{
 export const createTask=(task)=>{
   return function(dispatch){
     
+<<<<<<< HEAD
     axios.post('/task',task)
+=======
+    axios.post(url+'/task',task,options)
+>>>>>>> task manager material 1
     .then(res=>{
       dispatch(createTaskSuccess(res.data))
     })
@@ -60,7 +77,11 @@ export const createTask=(task)=>{
 export const deleteAllTasks=()=>{
   return function(dispatch){
     
+<<<<<<< HEAD
     axios.delete('/task')
+=======
+    axios.delete(url+'/task',options)
+>>>>>>> task manager material 1
     .then((res)=>{
       dispatch(deleteAllTasksSuccess())
     })
@@ -74,7 +95,11 @@ export const changeStatus=(id,value)=>{
       value
     }
     
+<<<<<<< HEAD
     axios.put('/task',data)
+=======
+    axios.put(url+'/task',data,options)
+>>>>>>> task manager material 1
     .then((res)=>{
       dispatch(loadTasks())
     })

@@ -4,21 +4,38 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start":"node src/server/server",
     "start:dev": "node node_modules/npm-run-all/bin/run-p/index start:react start:server",
     "start:react": "node node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js --port 3001 --open",
     "start:server": "node node_modules/nodemon/bin/nodemon src/server/server",
     "build":"node node_modules/webpack/bin/webpack --config webpack.config.prod.js"
+=======
+    "start": "node src/server/server",
+    "start:dev": "node node_modules/npm-run-all/bin/run-p/index start:react start:server",
+    "start:react": "node node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.dev.js --port 3001 --open",
+    "start:server": "node node_modules/nodemon/bin/nodemon src/server/server",
+    "build": "node node_modules/webpack/bin/webpack --config webpack.config.prod.js"
+>>>>>>> task manager material 1
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
+<<<<<<< HEAD
+=======
+    "@material-ui/core": "^4.10.1",
+    "aws-sdk": "^2.694.0",
+>>>>>>> task manager material 1
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "bootstrap-social": "^5.1.1",
+<<<<<<< HEAD
+=======
+    "classnames": "^2.2.6",
+>>>>>>> task manager material 1
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -28,16 +45,29 @@
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.2.1",
     "mongoose": "^5.9.16",
+<<<<<<< HEAD
+=======
+    "nodemailer": "^6.4.8",
+>>>>>>> task manager material 1
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
+<<<<<<< HEAD
     "react-toastify": "^6.0.5",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
+=======
+    "react-script-tag": "^1.1.2",
+    "react-toastify": "^6.0.5",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "webfontloader": "^1.6.28"
+>>>>>>> task manager material 1
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

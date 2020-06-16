@@ -7,12 +7,45 @@ import TaskForm from './TaskForm';
 
 import {Link} from 'react-router-dom';
 
+<<<<<<< HEAD
+=======
+import TaskCard from './TaskCard'
+
+import {Card,CardContent,Typography,Fab} from '@material-ui/core';
+
+const samples=[{
+  name:"task1",
+  status:"new",
+  _id:1,
+  dueDate:Date.now(),
+},{
+  name:"task2",
+  status:"new",
+  _id:2,
+  dueDate:Date.now()
+},{
+  name:"task3",
+  status:"new",
+  id_:3,
+  dueDate:Date.now()
+},{
+  name:"task4",
+  status:"new",
+  _id:4,
+  dueDate:Date.now
+}]
+
+>>>>>>> task manager material 1
 function TaskPage(props){
   
   const [tasks,setTasks]=useState([])
   
   const [archived,setArchived]=useState(false)
   
+<<<<<<< HEAD
+=======
+  const [dialogOpen,setDialogOpen]=useState(false)
+>>>>>>> task manager material 1
   
   useEffect(()=>{
     
@@ -65,6 +98,7 @@ function TaskPage(props){
     props.deleteAllTasks()
   }
   
+<<<<<<< HEAD
   function handleChange(e){
     
     const id=e.target.id;
@@ -77,19 +111,53 @@ function TaskPage(props){
     
   }
   
+=======
+  const handleChange=(id)=>{
+    
+
+    props.changeStatus(id,"Completed")
+    
+    setArchived(true)
+    
+    
+  }
+  
+  function handleDialogClose(){
+    setDialogOpen(false)
+  }
+  
+  function handleDialogOpen(){
+    setDialogOpen(true)
+  }
+  
+  function handleDeleteTask(){
+    setDialogOpen(false)
+  }
+>>>>>>> task manager material 1
 
   
   return(
     
     <div className="container mt-3 pb-5">
+<<<<<<< HEAD
     
       <div className="row">
          <Link to="/add-task"><button className="btn btn-success m-3">Add New Task</button></Link>
+=======
+      
+    
+    
+      <div className="row">
+         
+         
+         <Link to="/add-task" className="m-3"><Fab variant="extended" color="primary" gutter><i className="material-icons md-24 mr-1">event</i> Add Task</Fab></Link>
+>>>>>>> task manager material 1
       
         {/* <button onClick={handleDelete} className="m-3 btn btn-danger">Delete All Tasks</button>*/}
       </div>
       
       
+<<<<<<< HEAD
       {archived?<div className="alert alert-success">Task Moved To Archives</div>:null}
       
       {tasks.sort((a,b)=>{
@@ -129,6 +197,13 @@ function TaskPage(props){
       </>
       
       ))}
+=======
+      <TaskCard tasks={samples} handleChange={handleChange} dialogOpen={dialogOpen} handleDialogClose={handleDialogClose} handleDialogOpen={handleDialogOpen} handleDeleteTask={handleDeleteTask}/>
+      
+      {archived?<div className="alert alert-success">Task Moved To Archives</div>:null}
+      
+    
+>>>>>>> task manager material 1
       
       {tasks.filter(task=>task.status!=="Completed").length===0?<h2 className="text-center p-4 mt-4">No Active Tasks</h2>:null}
      

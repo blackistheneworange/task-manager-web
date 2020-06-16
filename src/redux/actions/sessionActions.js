@@ -2,6 +2,15 @@ import axios from 'axios';
 
 import * as taskActions from './taskActions';
 
+<<<<<<< HEAD
+=======
+let url="";let options={};
+
+if(process.env.NODE_ENV==="development"){
+  url="http://localhost:3000";
+  options={withCredentials:true}
+}
+>>>>>>> task manager material 1
 
 
 export function handleLoginSuccess(){
@@ -54,7 +63,11 @@ export function handleLogin(inputs){
   
   return function(dispatch){
       
+<<<<<<< HEAD
      axios.post('/auth/login',inputs)
+=======
+     axios.post(url+'/auth/login',inputs,options)
+>>>>>>> task manager material 1
      .then((res)=>{
        dispatch(handleLoginSuccess())
      },(err)=>{
@@ -72,7 +85,11 @@ export function handleLogin(inputs){
 export function handleSignup(inputs){
   return function(dispatch){
     
+<<<<<<< HEAD
      axios.post('/auth/register',inputs)
+=======
+     axios.post(url+'/auth/register',inputs,options)
+>>>>>>> task manager material 1
      .then((res)=>{
        dispatch(handleSignupSuccess())
      
@@ -88,7 +105,11 @@ export function handleSignup(inputs){
 export function initialVerification(){
   return function(dispatch){
     
+<<<<<<< HEAD
     axios.post('/auth/verify',"")
+=======
+    axios.post(url+'/auth/verify',"",options)
+>>>>>>> task manager material 1
     .then((res)=>{
       dispatch(handleVerificationSuccess());
     },(err)=>{
@@ -104,7 +125,11 @@ export function initialVerification(){
 
 export function handleLogout(){
   return function(dispatch){
+<<<<<<< HEAD
       axios.post('/auth/logout',"")
+=======
+      axios.post(url+'/auth/logout',"",options)
+>>>>>>> task manager material 1
      .then((res)=>{
        dispatch(handleLogoutSuccess());
        dispatch(taskActions.clearStateTasks())

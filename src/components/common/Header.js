@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React,{useEffect} from 'react';
+=======
+import React,{useEffect,useState} from 'react';
+>>>>>>> task manager material 1
 
 import {NavLink,Link,useHistory} from 'react-router-dom';
 
@@ -7,6 +11,7 @@ import {connect} from 'react-redux'
 import * as sessionActions from '../../redux/actions/sessionActions';
 
 
+<<<<<<< HEAD
 function Header(props){
   
   const history=new useHistory()
@@ -61,6 +66,80 @@ function Header(props){
       
     </nav>
     
+=======
+
+import Links from './Links'
+
+import {useStyles} from './customStyles/muiStyles'
+
+
+import {Typography,Button,IconButton,AppBar,Toolbar} from '@material-ui/core'
+
+import Drawer from './Drawer';
+
+
+
+function Header(props){
+
+  const history=new useHistory();
+  
+  const classes=useStyles()
+
+  const [open,setOpen]=useState(false);
+
+  const activeStyle={color:"lightblue"}
+
+  function handleLogoutClick(){
+    setOpen(false)
+    props.handleLogout()
+    
+      history.push('/')
+
+  }
+
+
+  function handleMenuClick(){
+    setOpen(!open);
+  }
+
+ 
+  return(
+
+     <div className={classes.navbar}>
+
+
+
+      <AppBar className={classes.appBar} position="static">
+
+        <Toolbar>
+          <IconButton onClick={handleMenuClick} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <i className="material-icons">menu</i>
+          </IconButton>
+
+
+          <Typography variant="h5" component="h2" className={classes.title} style={{fontFamily:"Raleway"}}>Taskination</Typography>
+
+
+
+          <div className={classes.navLinks}>
+             
+            <Links handleLogoutClick={handleLogoutClick}/>
+          
+          </div>
+
+
+        </Toolbar>
+
+
+       </AppBar>
+
+       <Drawer open={open} handleMenuClick={handleMenuClick} handleLogoutClick={handleLogoutClick}/>
+
+     </div>
+
+
+
+>>>>>>> task manager material 1
   )
 }
 
@@ -73,7 +152,11 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return{
     handleLogout(){
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> task manager material 1
       dispatch(sessionActions.handleLogout())
     }
   }

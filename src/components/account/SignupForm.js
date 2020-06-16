@@ -3,8 +3,21 @@ import './LoginPage.css'
 
 import {Link} from 'react-router-dom'
 
+<<<<<<< HEAD
 function SignupForm(props){
   
+=======
+import {useStyles} from './customStyles/muiStyles';
+
+import cx from 'classnames';
+
+import {Button,Typography} from '@material-ui/core'
+
+function SignupForm(props){
+  
+  const classes=useStyles()
+  
+>>>>>>> task manager material 1
   return(
   
     <div className="wrapper">
@@ -13,11 +26,19 @@ function SignupForm(props){
        
         <div className="col-12 col-md-6 offset-md-3 inner">
         
+<<<<<<< HEAD
           <Link to="/"><h1 className="title"><i className="fa fa-tasks fa-md"></i> Task Manager</h1></Link>
           
           <div class="form-inner">
           
           <h3>Register</h3>
+=======
+          <div className="title p-3 d-flex align-items-center"><i className="material-icons mr-1 md-48">fingerprint</i><Typography variant="h3"> Register</Typography></div>
+          
+          <div class="form-inner">
+          
+        
+>>>>>>> task manager material 1
           <form onSubmit={props.onSubmit}>
             
             <div className="form-group">
@@ -39,7 +60,15 @@ function SignupForm(props){
             
             {props.signupError?<div className="alert alert-danger">{props.signupError}</div>:null}
             
+<<<<<<< HEAD
             <button type="submit" className="btn btn-success w-100">Register</button>
+=======
+            <button style={{outline:"none",border:"none"}} type="submit" className="w-100 p-0 m-0"><Button variant="contained" className={cx("w-100",classes.actionButton)}>Register</Button></button>
+            
+            <div className="mt-1">
+            <Typography variant="p">Already have an account? <Link to="/login">Login</Link></Typography>
+            </div>
+>>>>>>> task manager material 1
           </form>
           </div>
         </div>

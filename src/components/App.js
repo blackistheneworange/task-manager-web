@@ -8,6 +8,11 @@ import Header from './common/Header'
 import AddTask from './tasks/AddTask';
 import LoginPage from './account/LoginPage';
 import SignupPage from './account/SignupPage'
+<<<<<<< HEAD
+=======
+import TaskSettings from './taskSettings/TaskSettings';
+import AccountSettings from './accountSettings/AccountSettings';
+>>>>>>> task manager material 1
 import Footer from './common/Footer'
 
 import configureStore from '../redux/configureStore';
@@ -26,7 +31,11 @@ function App(props){
   const RouteGuard=Component=>({match})=>{
     
     if(props.session.initialVerification && !props.session.authenticated){
+<<<<<<< HEAD
       return <Redirect to="/"/>
+=======
+      //return <Redirect to="/"/>
+>>>>>>> task manager material 1
     }
     
     return <Component match={match}/>
@@ -46,7 +55,11 @@ function App(props){
     
     <>
   
+<<<<<<< HEAD
        {props.session.authenticated?<Header/>:null}
+=======
+       {props.session.authenticated?<Header/>:<Header/>}
+>>>>>>> task manager material 1
        
        <Switch>
          
@@ -56,7 +69,12 @@ function App(props){
          <Route path="/archives" render={RouteGuard(ArchivesPage)}/>
          <Route exact path="/tasks" render={RouteGuard(TaskPage)}/>
          <Route exact path="/add-task" render={RouteGuard(AddTask)}/>
+<<<<<<< HEAD
          
+=======
+         <Route path="/settings" render={RouteGuard(TaskSettings)}/>
+         <Route path="/account" render={RouteGuard(AccountSettings)}/>
+>>>>>>> task manager material 1
          <Route component={PageNotFound}/>
        
        </Switch>

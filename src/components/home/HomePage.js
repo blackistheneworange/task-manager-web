@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React,{useState,useEffect} from 'react';
+>>>>>>> task manager material 1
 
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
+<<<<<<< HEAD
 import './HomePage.css'
 
 const HomePage=(props)=>{
@@ -35,6 +40,113 @@ const HomePage=(props)=>{
   </div>
   
   </div>
+=======
+import UserDashboard from './UserDashboard';
+
+import cx from 'classnames';
+
+import './customStyles/HomePage.css';
+
+
+import {useStyles} from './customStyles/muiStyles';
+
+import {Typography,Button,Grow,Zoom} from '@material-ui/core';
+
+
+
+const mainTexts=[{
+  name:"CREATE.",
+  timeout:1000,
+  variant:"h3",
+ 
+},{
+  name:"MANAGE.",
+  timeout:1900,
+  variant:"h3",
+  
+},{
+  name:"COMPLETE.",
+  timeout:2800,
+  variant:"h3",
+ 
+},{
+  name:"TASKS",
+  timeout:3400,
+  variant:"h4",
+
+},{
+  name:"ON THE GO...",
+  timeout:4000,
+  variant:"p",
+  
+}]
+
+const HomePage=(props)=>{
+ 
+ const classes=useStyles();
+ 
+ 
+ const styles={
+   
+   fontFamily:'Coda,Roboto,sans-serif'
+ }
+
+ return(
+   
+   <>
+    
+  <UserDashboard/>
+   
+   {/*<div className={classes.overlay}>
+     
+     <div className="container">
+     
+     
+      <div className="row">
+      
+        
+        <div className="col-12 col-md-6">
+        
+       
+          
+        {mainTexts.map((text)=>(
+          
+          <Grow in={true} style={{transformOrigin:'-400px 0 0'}} timeout={text.timeout}>
+             <Typography 
+             
+               className={text.name==="TASKS"?classes.subText:text.name==="ON THE GO..."?classes.subText2:classes.introText}
+               
+               variant={text.variant}>
+               
+               {text.name}
+             </Typography>
+           </Grow>
+        ))}
+           
+           
+        
+        </div>
+        
+        <Zoom in={true} timeout={250}>
+        
+        <div className="col-12 col-md-6 mt-md-0 accountButtons">
+           
+           <Typography variant="h4" className="sideText text-center">GET STARTED </Typography>
+          <Link to="/signup" className="sideText"><Button variant="contained" className={cx("w-100","accountButton",classes.sideText)}>REGISTER</Button></Link>
+          <Link to="/login" className="sideText"><Button variant="contained" className={cx("w-100","accountButton",classes.sideText)}>LOGIN</Button>
+          </Link>
+        </div>
+        
+        </Zoom>
+     
+     </div>
+     
+    </div>
+     
+  
+  </div>*/}
+  </>
+>>>>>>> task manager material 1
  )
 }
 
